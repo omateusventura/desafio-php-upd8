@@ -24,6 +24,23 @@ document.addEventListener('DOMContentLoaded', _ => {
   .addEventListener('submit', e => filter(e));
 });
 
+function executeEvents() {
+  document.querySelectorAll('.btnPopup')
+  .forEach(button => {
+    button.addEventListener('click', e => togglePopUp(e.target));
+  });
+
+  document.querySelectorAll('#btnCancel')
+  .forEach(button => {
+    button.addEventListener('click', e => toggleCancel(e.target));
+  });
+
+  document.querySelectorAll('#btnDelete')
+  .forEach(button => {
+    button.addEventListener('click', e => deleteCustomer(e.target));
+  });
+}
+
 function toggleFilter() {
   const filter = document.querySelector('#filter');
 
@@ -89,5 +106,7 @@ function filter(event) {
   .then(response => {
     document.querySelector('#tableBody')
     .innerHTML = response;
+
+    executeEvents();
   })
 }
