@@ -84,10 +84,10 @@ function filter(event) {
   const formData = new FormData(event.target);
   const data = new URLSearchParams(formData).toString();
 
-  console.log(data)
   fetch(`${API_URL}/clientes/search?${data}`)
   .then(request => request.text())
   .then(response => {
-    document.querySelector('#tableBody').innerHTML = response;
+    document.querySelector('#tableBody')
+    .innerHTML = response;
   })
 }

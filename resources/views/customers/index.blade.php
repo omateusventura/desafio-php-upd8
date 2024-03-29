@@ -97,7 +97,7 @@
                 class="input-check block px-2.5 pb-2.5 border pt-4 w-full text-sm text-gray-900 rounded-lg appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer disabled:bg-slate-50"
                 name="state"
               >
-                <option value="" disabled hidden selected>Selecione...</option>
+                <option value="" selected>Todos</option>
                 <option value="AC">Acre</option>
                 <option value="AL">Alagoas</option>
                 <option value="AP">Amapá</option>
