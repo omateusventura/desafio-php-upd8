@@ -19,6 +19,9 @@ document.addEventListener('DOMContentLoaded', _ => {
   .forEach(button => {
     button.addEventListener('click', e => deleteCustomer(e.target));
   });
+
+  document.querySelector('#formFilter')
+  .addEventListener('submit', e => filter(e));
 });
 
 function toggleFilter() {
@@ -75,3 +78,16 @@ function deleteCustomer(element) {
   });
 }
 
+function filter(event) {
+  event.preventDefault();
+
+  const formData = new FormData(event.target);
+  const data = new URLSearchParams(formData).toString();
+
+  console.log(data)
+  fetch(`${API_URL}/clientes/search?${data}`)
+  .then(request => request.text())
+  .then(response => {
+    document.querySelector('#tableBody').innerHTML = response;
+  })
+}

@@ -39,7 +39,7 @@
         </div>
 
         <!-- Filter -->
-        <div id="filter" class="hidden absolute z-10 bg-white w-full max-w-7xl mx-auto px-5 py-6 border shadow-md rounded-md mt-3
+        <div id="filter" class="hidden absolute z-40 bg-white w-full max-w-7xl mx-auto px-5 py-6 border shadow-md rounded-md mt-3
          left-1/2 transform -translate-x-1/2
         ">
           <h3 class="font-semibold flex items-center gap-1">
@@ -47,7 +47,7 @@
             Filtrar clientes
           </h3>
 
-          <form class="w-full grid grid-cols-12 gap-4 mt-3">
+          <form id="formFilter" class="w-full grid grid-cols-12 gap-4 mt-3">
             <div class="relative col-span-4">
               <input
                 type="text"
@@ -62,7 +62,7 @@
               </label>
             </div>
 
-            <div class="relative col-span-6">
+            <div class="relative col-span-8">
               <input
                 type="text"
                 id="inputName"
@@ -76,24 +76,11 @@
               </label>
             </div>
 
-            <div class="relative col-span-2">
-              <input
-                type="date"
-                id="inputDate"
-                class="input-check block px-2.5 pb-2.5 pt-4 w-full border text-sm text-gray-900 bg-transparent rounded-lg appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                name="dateofbirth"
-                placeholder=" "
-              />
-              <label for="inputDate" class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-4 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
-                Data de Nascimento
-              </label>
-            </div>
-
             <div class="relative col-span-4 flex flex-col justify-start">
               <select
                 id="inputGenere"
                 class="input-check block px-2.5 pb-2.5 border pt-4 w-full text-sm text-gray-900 rounded-lg appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer disabled:bg-slate-50"
-                name="state"
+                name="genere"
               >
                 <option value="">Todos</option>
                 <option value="male">Masculino</option>

@@ -106,4 +106,14 @@
       $response = $this->customerService->delete($id);
       return response()->json($response);
     }
+
+    /**
+     *
+    */
+    public function search(Request $request)
+    {
+      $params = $request->query->all();
+      $customers = $this->customerService->search($params);
+      return view('customers.tabledata', compact('customers'));
+    }
   }

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
 
 Route::get('/clientes', [CustomerController::class, 'findAll']);
+Route::get('/clientes/search', [CustomerController::class, 'search']);
 Route::get('/clientes/{id}', [CustomerController::class, 'findById']);
 Route::post('/clientes',[CustomerController::class, 'create']);
 Route::put('/clientes/{id}', [CustomerController::class, 'update']);

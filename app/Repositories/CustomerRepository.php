@@ -42,4 +42,19 @@
       return $this->customerModel::where('id', $customerId)
       ->update(["deleted_at" => Carbon::now()]);
     }
+
+    /**
+     * @param array [cpf, name, genere, state]
+     */
+    public function search(array $params)
+    {
+      $query = $this->customerModel::query();
+
+      if (isset($params['cpf'])) $query->where('cpf', '=', $params['cpf']);
+      if (isset($params['name'])) $query->where('name', 'LIKE', '%' . $params['name'] . '%');
+      if (isset($params['genere'])) $query->where('genere', '=', $params['genere']);
+      if (isset($params['state'])) $query->where('state', '=', $params['state']);
+
+      return $query->whereNull('deleted_at')->get();
+    }
   }

@@ -53,4 +53,10 @@
       return [ "status" => 200, "message" => "Cliente excluído com sucesso" ];
     }
 
+    public function search(array $params)
+    {
+      $response = $this->customerRepository->search($params);
+      return $response;
+    }
+
   }
