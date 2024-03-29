@@ -8,7 +8,7 @@
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="{{ asset('assets/js/utils.js') }}" type="module"></script>
-    <script src="{{ asset('assets/js/filter.js') }}" type="module"></script>
+    <script src="{{ asset('assets/js/index.js') }}" type="module"></script>
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>

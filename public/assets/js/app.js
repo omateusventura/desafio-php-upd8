@@ -1,11 +1,10 @@
-export const API_URL = 'http://localhost:8000/api';
-
 import {
   maskCPF,
   maskCEP,
   checkInputErrors,
   showToast,
-  clearInput
+  clearInput,
+  API_URL
 } from './utils.js'
 
 document.addEventListener('DOMContentLoaded', _ => {
