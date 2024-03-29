@@ -23,11 +23,6 @@
           </h1>
 
           <div class="flex items-center gap-3">
-            <button id="btnFilter" class="flex items-center gap-1 border text-slate-900 text-sm rounded-md px-3 py-2">
-              <i class="ph ph-funnel"></i>
-              Filtro
-            </button>
-
             <a
               class="flex items-center gap-1 bg-zinc-900 text-white text-sm rounded-md px-3 py-2"
               href="http://localhost:8000/clientes/cadastro"
