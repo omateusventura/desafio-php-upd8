@@ -41,19 +41,29 @@ O projeto irá abrir no link http://localhost:8000
 ## Rotas da API RESTful
 
 ```
-  GET http://localhost:8000/clientes
-  GET http://localhost:8000/clientes/{id}
-  POST http://localhost:8000/clientes
-  PUT http://localhost:8000/clientes/{id}
-  DELETE http://localhost:8000/clientes/{id}
+  GET http://localhost:8000/api/clientes
+  GET http://localhost:8000/api/clientes/{id}
+  POST http://localhost:8000/api/clientes
+  PUT http://localhost:8000/api/clientes/{id}
+  DELETE http://localhost:8000/api/clientes/{id}
 ```
 
 ## Estrutura do banco de dados
 
 ```
-  GET http://localhost:8000/clientes
-  GET http://localhost:8000/clientes/{id}
-  POST http://localhost:8000/clientes
-  PUT http://localhost:8000/clientes/{id}
-  DELETE http://localhost:8000/clientes/{id}
+  Schema::create('customers', function (Blueprint $table) {
+    $table->id();
+    $table->string('cpf', 11)->unique();
+    $table->string('name');
+    $table->enum('genere', ['male', 'female']);
+    $table->date('dateofbirth');
+    $table->string('postalcode', 10);
+    $table->string('street');
+    $table->string('number');
+    $table->string('neighborhood');
+    $table->string('city');
+    $table->string('state', 2);
+    $table->timestamps();
+    $table->datetime('deleted_at')->nullable();
+  });
 ```
