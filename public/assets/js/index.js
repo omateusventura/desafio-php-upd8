@@ -119,6 +119,10 @@ function filter(event) {
     document.querySelector('#tableBody')
     .innerHTML = response;
 
+
+    document.querySelector('#filter')
+    .classList.add('hidden')
+
     executeEvents();
   })
 }
