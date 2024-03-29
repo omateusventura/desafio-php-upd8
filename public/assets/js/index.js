@@ -91,7 +91,6 @@ function toggleCancel(element) {
   popup.classList.remove('block');
 }
 
-
 function deleteCustomer(element) {
   const customerId = element.getAttribute('data-id');
   const text = document.querySelector(`#description-${customerId}`);
@@ -99,14 +98,12 @@ function deleteCustomer(element) {
   text.classList.add('hidden');
 
   fetch(`${API_URL}/clientes/${customerId}`, { method: 'DELETE' })
-  .then(request => request.json())
+  .then(request => request.text())
   .then(response => {
     text.classList.remove('hidden');
 
-    if (response.status === 200) {
-      document.querySelector(`#row-${customerId}`).remove();
-      showToast('success', 'Cliente excluído com sucesso');
-    }
+    document.querySelector(`#row-${customerId}`).remove();
+    showToast('success', 'Cliente excluído com sucesso');
   });
 }
 

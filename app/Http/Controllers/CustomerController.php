@@ -39,7 +39,7 @@
     public function findAll() : JsonResponse
     {
       $customers = $this->customerService->findAll();
-      return response()->json($customers);
+      return response()->json($customers, 200);
     }
 
     /**
@@ -49,7 +49,7 @@
     public function findById(int $id) : JsonResponse
     {
       $customers = $this->customerService->findById($id);
-      return response()->json($customers);
+      return response()->json($customers, 200);
     }
 
     /**
@@ -72,7 +72,7 @@
       ]);
 
       $response = $this->customerService->create($request->all());
-      return response()->json($response);
+      return response()->json($response, 201);
     }
 
     /**
@@ -94,7 +94,7 @@
       ]);
 
       $response = $this->customerService->update($id, $request->all());
-      return response()->json($response);
+      return response()->json($response, 200);
     }
 
     /**
@@ -104,7 +104,7 @@
     public function delete(int $id) : JsonResponse
     {
       $response = $this->customerService->delete($id);
-      return response()->json($response);
+      return response()->json($response, 204);
     }
 
     /**

@@ -2,28 +2,41 @@
 
   namespace App\Services;
 
-  use App\Repositories\CustomerRepository;
+  use App\Repositories\CustomerRepositoryDatabase;
   use Illuminate\Database\Eloquent\Model;
+  use Illuminate\Database\Eloquent\Collection;
+  use App\Models\Customer;
 
   class CustomerService
   {
     public function __construct(
-      protected CustomerRepository $customerRepository
+      protected CustomerRepositoryDatabase $customerRepositoryDatabase
     ){}
 
-    public function findAll()
+    /**
+     * @return Collection
+    */
+    public function findAll() : Collection
     {
-      return $this->customerRepository->findAll();
+      return $this->customerRepositoryDatabase->findAll();
     }
 
-    public function findById(int $customerId)
+    /**
+     * @param int $customerId
+     * @return Customer
+    */
+    public function findById(int $customerId) : Customer
     {
-      return $this->customerRepository->findById($customerId);
+      return $this->customerRepositoryDatabase->findById($customerId);
     }
 
-    public function create(array $customer)
+    /**
+      * @param array $customer
+      * @return array
+    */
+    public function create(array $customer) : array
     {
-      $isClientExists = $this->customerRepository->findByCPF($customer['cpf']);
+      $isClientExists = $this->customerRepositoryDatabase->findByCPF($customer['cpf']);
 
       if (count($isClientExists) > 0) {
         return [
@@ -33,7 +46,8 @@
         ];
       }
 
-      $response =  $this->customerRepository->create($customer);
+      $response = $this->customerRepositoryDatabase->create($customer);
+
       return [
         "status"  => 201,
         "message" => "Cliente cadastrado com sucesso",
@@ -41,22 +55,35 @@
       ];
     }
 
-    public function update(int $customerId, array $customer)
+    /**
+     * @param int $customerId
+     * @param array $customer
+     * @return array
+    */
+    public function update(int $customerId, array $customer) : array
     {
-      $this->customerRepository->update($customerId, $customer);
-      return [ "status"=> 200, "message" => "Cliente atualizado com sucesso" ];
+      $this->customerRepositoryDatabase->update($customerId, $customer);
+      return [
+        "status"=> 200,
+        "message" => "Cliente atualizado com sucesso"
+      ];
     }
 
+    /**
+     * @param int $customerId
+    */
     public function delete(int $customerId)
     {
-      $this->customerRepository->delete($customerId);
-      return [ "status" => 200, "message" => "Cliente excluído com sucesso" ];
+      $this->customerRepositoryDatabase->delete($customerId);
     }
 
-    public function search(array $params)
+    /**
+      * @param array $params
+      * @return Collection
+    */
+    public function search(array $params) : Collection
     {
-      $response = $this->customerRepository->search($params);
-      return $response;
+      return $this->customerRepositoryDatabase->search($params);
     }
 
   }
