@@ -23,6 +23,24 @@ composer install
 ```
 
 ```
+Configure o banco de dados no arquivo .env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=upd8
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+```
+php artisan migrate
+```
+
+```
+php artisan db:seed --class=CustomerSeeder
+```
+
+```
 php artisan serve
 ```
 

@@ -23,6 +23,11 @@
           </h1>
 
           <div class="flex items-center gap-3">
+            <button id="btnFilter" class="flex items-center gap-1 border text-slate-900 text-sm rounded-md px-3 py-2">
+              <i class="ph ph-funnel"></i>
+              Filtro
+            </button>
+
             <a
               class="flex items-center gap-1 bg-zinc-900 text-white text-sm rounded-md px-3 py-2"
               href="http://localhost:8000/clientes/cadastro"
@@ -149,9 +154,10 @@
         </div>
       </div>
 
-      <div class="max-w-7xl mx-auto bg-white mt-6 border border-slate-100 shadow-md rounded-md">
+      <!-- Table -->
+      <div class="max-w-7xl max-h-[calc(100%_-_80px)] mx-auto overflow-auto bg-white mt-6 border border-slate-100 shadow-md rounded-md">
         <table id="table" class="w-full">
-          <thead>
+          <thead class="sticky top-0 z-20 bg-white border-b border-slate-100">
             <tr class="border-b border-slate-100">
               <th class="text-start text-slate-900 px-3 py-3">Cliente</th>
               <th class="text-start text-slate-900 px-3 py-3"s>Data de Nascimento</th>
