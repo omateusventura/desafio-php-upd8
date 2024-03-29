@@ -18,9 +18,19 @@ Para iniciar a projeto, execute os comandos na sequência abaixo
 git clone https://github.com/omateusventura/desafio-php-upd8.git
 ```
 
+
+```
+npm install
+```
+
 ```
 composer install
 ```
+
+```
+Crie o arquivo .env na raiz do projeto
+```
+
 
 ```
 Configure o banco de dados no arquivo .env
