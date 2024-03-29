@@ -28,9 +28,8 @@ composer install
 ```
 
 ```
-Crie o arquivo .env na raiz do projeto
+Crie o arquivo .env na raiz do projeto, copie e cole as informações do arquivo .env.example
 ```
-
 
 ```
 Configure o banco de dados no arquivo .env
@@ -41,6 +40,10 @@ DB_PORT=3306
 DB_DATABASE=upd8
 DB_USERNAME=root
 DB_PASSWORD=
+```
+
+```
+php artisan key:generate
 ```
 
 ```
