@@ -4,6 +4,30 @@
   left: 10px;
 }
 
+.dt-input {
+  border: 1px solid #eee !important;
+  border-radius: 5px !important;
+}
+
+#dt-search-0 {
+  font-size: 0.85rem;
+  width: 220px;
+  height: 40px;
+}
+
+.dt-search label {
+  font-size: 0.85rem;
+  position: relative;
+  right: 10px;
+}
+
+.dt-length,
+.dt-info {
+  font-size: 0.85rem;
+  color: #222;
+  font-weight: bold;
+}
+
 .dt-search {
   position: relative;
   right: 10px;
@@ -12,4 +36,26 @@
 .dt-search,
 .dt-legth {
   padding-top: 10px;
+}
+
+.dt-scroll-body {
+  border-bottom: 1px solid #eee !important;
+}
+
+th {
+  border-bottom: 1px solid #eee !important
+}
+
+.previous,
+.next {
+  font-size: 0.85rem;
+}
+
+.current {
+  background: #eee !important;
+  border-radius: 5px !important;
+  border: 1px solid #ccc;
+  color: #ffffff !important;
+  font-size: 0.85rem;
+  font-weight: bold;
 }
