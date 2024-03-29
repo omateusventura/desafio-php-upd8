@@ -24,6 +24,7 @@ composer install
 
 ```
 Configure o banco de dados no arquivo .env
+
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306

@@ -13,19 +13,48 @@
       protected CustomerService $customerService
     ) {}
 
-    public function index()
+    /**
+     * @return View
+    */
+    public function index() : View
     {
       $customers = $this->customerService->findAll();
       return view('customers.index', compact('customers'));
     }
 
-    public function show(int $id)
+    /**
+     * @return View
+    */
+    public function show(int $id) : View
     {
       $customer = $this->customerService->findById($id);
       return view('customers.update', compact('customer'));
     }
 
-    public function create(Request $request)
+    /**
+     * @return JsonResponse
+    */
+    public function findAll() : JsonResponse
+    {
+      $customers = $this->customerService->findAll();
+      return response()->json($customers);
+    }
+
+    /**
+     * @param int $customerId
+     * @return JsonResponse
+    */
+    public function findById(int $id) : JsonResponse
+    {
+      $customers = $this->customerService->findById($id);
+      return response()->json($customers);
+    }
+
+    /**
+     * @param Request $request
+     * @return JsonResponse
+    */
+    public function create(Request $request) : JsonResponse
     {
       $request->validate([
         'cpf'          => 'required',
@@ -44,7 +73,12 @@
       return response()->json($response);
     }
 
-    public function update(Request $request, int $id)
+    /**
+     * @param Request $request
+     * @param int $customerId
+     * @return JsonResponse
+    */
+    public function update(Request $request, int $id) : JsonResponse
     {
       $request->validate([
         'name'         => 'required',
@@ -61,7 +95,11 @@
       return response()->json($response);
     }
 
-    public function delete(int $id)
+    /**
+     * @param int $customerId
+     * @return JsonResponse
+    */
+    public function delete(int $id) : JsonResponse
     {
       $response = $this->customerService->delete($id);
       return response()->json($response);
