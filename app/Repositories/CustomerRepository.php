@@ -14,7 +14,7 @@
 
     public function findAll()
     {
-      return $this->customerModel::get();
+      return $this->customerModel::whereNull('deleted_at')->get();
     }
 
     public function findById(int $customerId)

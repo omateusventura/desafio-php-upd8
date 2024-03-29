@@ -50,7 +50,7 @@
     public function delete(int $customerId)
     {
       $this->customerRepository->delete($customerId);
-      return [ "message" => "Cliente excluído com sucesso" ];
+      return [ "status" => 200, "message" => "Cliente excluído com sucesso" ];
     }
 
   }
