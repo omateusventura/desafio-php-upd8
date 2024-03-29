@@ -1,0 +1,15 @@
+.dt-info,
+.dt-length {
+  position: relative;
+  left: 10px;
+}
+
+.dt-search {
+  position: relative;
+  right: 10px;
+}
+
+.dt-search,
+.dt-legth {
+  padding-top: 10px;
+}

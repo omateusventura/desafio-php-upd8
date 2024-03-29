@@ -22,6 +22,21 @@ document.addEventListener('DOMContentLoaded', _ => {
 
   document.querySelector('#formFilter')
   .addEventListener('submit', e => filter(e));
+
+  new DataTable('#table', {
+    scrollY: '58vh',
+    ordering: false,
+    pagingType: 'simple_numbers',
+    responsive: true,
+    fixedHeader: {
+      header: true,
+      footer: true
+    },
+    language: {
+      url: 'https://cdn.datatables.net/plug-ins/2.0.3/i18n/pt-BR.json',
+    },
+  });
+
 });
 
 function executeEvents() {

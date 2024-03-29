@@ -10,8 +10,13 @@
     <script src="{{ asset('assets/js/utils.js') }}" type="module"></script>
     <script src="{{ asset('assets/js/index.js') }}" type="module"></script>
 
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/app.css') }}">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.dataTables.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
   </head>
   <body>
     <main class="w-screen h-screen bg-slate-50 p-4">
@@ -142,7 +147,7 @@
       </div>
 
       <!-- Table -->
-      <div class="max-w-7xl max-h-[calc(100%_-_80px)] mx-auto overflow-auto bg-white mt-6 border border-slate-100 shadow-md rounded-md">
+      <div class="max-w-7xl mx-auto bg-white mt-6 border border-slate-100 shadow-md rounded-md">
         <table id="table" class="w-full">
           <thead class="sticky top-0 z-20 bg-white border-b border-slate-100">
             <tr class="border-b border-slate-100">
